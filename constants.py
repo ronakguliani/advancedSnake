@@ -4,6 +4,10 @@
 WINDOW_WIDTH = 1920
 WINDOW_HEIGHT = 1080
 
+# Border dimensions
+BORDER_WIDTH = 10
+
+
 # Snake dimensions
 SNAKE_WIDTH = 20
 SNAKE_HEIGHT = 20

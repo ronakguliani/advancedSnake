@@ -43,6 +43,14 @@ class Game:
                 elif event.key == pygame.K_DOWN:
                     if self.last_move_direction != "up":
                         self.move_direction = "down"
+                # Handle 'r' key press for restarting the game
+                elif event.key == pygame.K_r:
+                    self.game_over = False
+                    self.snake = Snake()
+                    self.food = Food()
+                    self.move_direction = random.choice(
+                        ["left", "right", "up", "down"])
+                    self.last_move_direction = self.move_direction
 
     def update(self):
         if self.game_over:
@@ -67,3 +75,6 @@ class Game:
 
         self.snake.draw(surface)
         self.food.draw(surface)
+
+    def handle_restart(self):
+        self.__init__()

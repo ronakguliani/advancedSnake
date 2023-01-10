@@ -58,7 +58,7 @@ class Snake:
         #     if self.segments[0].colliderect(self.segments[i]):
         #         return True
 
-        return False
+        # return False
 
     def draw(self, surface):
         for segment in self.segments:

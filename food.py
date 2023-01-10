@@ -25,5 +25,7 @@ class Food:
 
     def spawn(self):
         # Place the food somewhere randomly on the screen
-        self.rect.x = random.randint(0, WINDOW_WIDTH - FOOD_WIDTH)
-        self.rect.y = random.randint(0, WINDOW_HEIGHT - FOOD_HEIGHT)
+        self.rect.x = random.randint(
+            BORDER_WIDTH, WINDOW_WIDTH - SNAKE_WIDTH - BORDER_WIDTH)
+        self.rect.y = random.randint(
+            BORDER_WIDTH, WINDOW_HEIGHT - SNAKE_HEIGHT - BORDER_WIDTH)

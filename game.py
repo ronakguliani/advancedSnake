@@ -2,6 +2,7 @@
 import pygame
 import random
 import sys
+import os
 
 from constants import *
 from food import Food
@@ -75,6 +76,22 @@ class Game:
 
         self.snake.draw(surface)
         self.food.draw(surface)
+
+        if self.game_over:
+            game_over_text = "Game Over"
+            restart_text = "Press 'r' to Restart"
+            font = pygame.font.Font(None, 160)
+            text = font.render(game_over_text, True, RED)
+            text_rect = text.get_rect()
+            text_rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 50)
+            surface.blit(text, text_rect)
+
+            font = pygame.font.Font(None, 35)
+            text = font.render(restart_text, True, RED)
+            text_rect = text.get_rect()
+            text_rect.center = (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 + 30)
+            surface.blit(text, text_rect)
+            return
 
     def handle_restart(self):
         self.__init__()

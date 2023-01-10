@@ -56,14 +56,14 @@ class Game:
             self.game_over = True
 
     def draw(self, surface):
-        # Draw a red border around the window
-        pygame.draw.line(surface, RED, (0, 0), (WINDOW_WIDTH, 0), 20)  # Top
-        pygame.draw.line(surface, RED, (0, 0), (0, WINDOW_HEIGHT), 20)  # Left
-        pygame.draw.line(surface, RED, (WINDOW_WIDTH, 0),
-                         (WINDOW_WIDTH, WINDOW_HEIGHT), 20)  # Right
-        pygame.draw.line(surface, RED, (0, WINDOW_HEIGHT),
-                         (WINDOW_WIDTH, WINDOW_HEIGHT), 20)  # Bottom
-
         surface.fill(BLACK)
+        # Draw a red border around the window
+        pygame.draw.line(surface, RED, (0, 0), (WINDOW_WIDTH, 0), 10)  # Top
+        pygame.draw.line(surface, RED, (0, 0), (0, WINDOW_HEIGHT), 10)  # Left
+        pygame.draw.line(surface, RED, (WINDOW_WIDTH, 0),
+                         (WINDOW_WIDTH, WINDOW_HEIGHT), 10)  # Right
+        pygame.draw.line(surface, RED, (0, WINDOW_HEIGHT),
+                         (WINDOW_WIDTH, WINDOW_HEIGHT), 10)  # Bottom
+
         self.snake.draw(surface)
         self.food.draw(surface)
